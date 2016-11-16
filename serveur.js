@@ -11,9 +11,15 @@ var user = {
 app.use(bodyParser());
 
 app.post("/login", function(req , res){
+	
+	console.log(user.username);
+	console.log(req.body.username)
+
 	if (req.body.username === user.username && req.body.password === user.password) {
 		res.send("You are connected");
 		console.log("ok passed");
+	}else{
+		res.send("error")
 	}
 })
 
