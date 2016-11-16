@@ -1,5 +1,5 @@
 (function(){
-	"use strict"
+	
 	var app = {
 		
 		init : function(){
@@ -11,24 +11,23 @@
 		},
 
 		recupForm : function(event){
-			// event.preventDefault();
-			var data = $("form").serialize();
-/*autre methode pour recuperer data
+			event.preventDefault();
 			var data = {
 				username:$("#username").val(),
 				password:$("#password").val(),
-			}
-			*/
+
+			},
 			$.ajax({
+
 				type :"POST",
 				url :$("form").attr("action"),
-				data :data,
-				success:function(){
-					console.log(data)
-				},
-			})
-			
+				data : data,
+				success:console.log(data)
+				
+			});
+
 		},
+
 	};
 
 	app.init()
